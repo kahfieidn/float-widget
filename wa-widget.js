@@ -1,25 +1,26 @@
-// ==================== WA FLOATING WIDGET ====================
+// ==================== WA FLOATING WIDGET v2.0 ====================
 (function() {
     'use strict';
 
     const script = document.currentScript;
+    
+    // === CONFIGURASI ===
     const phone = script.getAttribute('data-phone') || '6282121218493';
     const defaultText = script.getAttribute('data-text') || 'Halo%20admin%20jagoan%20kode:)';
     const name = script.getAttribute('data-name') || 'Customer Service';
+    const autoOpen = script.getAttribute('data-autoopen') === 'true'; // tambah ini kalau mau auto popup
 
-    // Cek apakah widget sudah ada
+    // Cek duplikat
     if (document.getElementById('wa-float-widget')) return;
 
     // ==================== HTML ====================
     const html = `
     <div id="wa-float-widget">
-      <!-- Floating Button -->
       <div id="wa-float-btn">
         <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WA" width="28" height="28">
         <span>Chat Kami</span>
       </div>
 
-      <!-- Chat Popup -->
       <div id="wa-chat-popup" class="wa-popup hidden">
         <div class="wa-header">
           <div class="wa-header-info">
@@ -57,7 +58,7 @@
       bottom: 20px;
       right: 20px;
       z-index: 99999;
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      font-family: system-ui, -apple-system, sans-serif;
     }
 
     #wa-float-btn {
@@ -68,16 +69,17 @@
       display: flex;
       align-items: center;
       gap: 12px;
-      box-shadow: 0 5px 20px rgba(37, 211, 102, 0.4);
+      box-shadow: 0 5px 20px rgba(37, 211, 102, 0.45);
       cursor: pointer;
       transition: all 0.3s ease;
       user-select: none;
       font-weight: 600;
+      font-size: 15px;
     }
 
     #wa-float-btn:hover {
-      transform: scale(1.1);
-      box-shadow: 0 8px 25px rgba(37, 211, 102, 0.5);
+      transform: scale(1.08);
+      box-shadow: 0 8px 25px rgba(37, 211, 102, 0.55);
     }
 
     .wa-popup {
@@ -87,16 +89,14 @@
       width: 320px;
       background: white;
       border-radius: 18px;
-      box-shadow: 0 12px 40px rgba(0,0,0,0.25);
+      box-shadow: 0 15px 45px rgba(0,0,0,0.3);
       overflow: hidden;
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-      opacity: 1;
-      transform: translateY(0);
+      transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
     .hidden {
       opacity: 0 !important;
-      transform: translateY(20px) scale(0.95) !important;
+      transform: translateY(30px) scale(0.9) !important;
       pointer-events: none;
     }
 
@@ -114,8 +114,7 @@
     .wa-close {
       font-size: 26px;
       cursor: pointer;
-      opacity: 0.9;
-      line-height: 1;
+      opacity: 0.85;
     }
 
     .wa-body {
@@ -128,8 +127,7 @@
       background: white;
       padding: 14px 18px;
       border-radius: 20px 20px 20px 6px;
-      box-shadow: 0 3px 8px rgba(0,0,0,0.08);
-      display: inline-block;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
       max-width: 85%;
     }
 
@@ -142,7 +140,7 @@
     #wa-send-btn {
       background: #25D366;
       color: white;
-      padding: 14px;
+      padding: 14px 20px;
       border-radius: 50px;
       text-decoration: none;
       display: flex;
@@ -165,12 +163,12 @@
     style.textContent = css;
     document.head.appendChild(style);
 
-    // Inject HTML
+    // Inject Widget
     const container = document.createElement('div');
     container.innerHTML = html;
     document.body.appendChild(container);
 
-    // ==================== FUNCTIONALITY ====================
+    // ==================== LOGIKA ====================
     const btn = document.getElementById('wa-float-btn');
     const popup = document.getElementById('wa-chat-popup');
     const closeBtn = document.querySelector('.wa-close');
@@ -182,15 +180,19 @@
     btn.addEventListener('click', togglePopup);
     closeBtn.addEventListener('click', togglePopup);
 
-    // Close when click outside
-    document.addEventListener('click', function(e) {
+    // Klik di luar untuk close
+    document.addEventListener('click', (e) => {
       if (!container.contains(e.target)) {
         popup.classList.add('hidden');
       }
     });
 
-    // Auto open after 5 seconds (optional - uncomment if you want)
-    // setTimeout(() => { if (popup.classList.contains('hidden')) togglePopup(); }, 5000);
+    // Auto open (opsional)
+    if (autoOpen) {
+      setTimeout(() => {
+        if (popup.classList.contains('hidden')) togglePopup();
+      }, 4000);
+    }
 
-    console.log('%c✅ WA Floating Widget loaded successfully', 'color:#25D366; font-weight:bold');
+    console.log('%c✅ WA Floating Widget v2.0 loaded successfully', 'color:#25D366; font-weight:bold');
 })();
