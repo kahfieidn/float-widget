@@ -3,8 +3,8 @@
     'use strict';
 
     const script = document.currentScript;
-    const phone = script.getAttribute('data-phone') || '628XXXXXXXXXX';
-    const defaultText = script.getAttribute('data-text') || 'Halo%20saya%20mau%20bertanya';
+    const phone = script.getAttribute('data-phone') || '6282121218493';
+    const defaultText = script.getAttribute('data-text') || 'Halo%20admin%20jagoan%20kode:)';
     const name = script.getAttribute('data-name') || 'Customer Service';
 
     // Cek apakah widget sudah ada
