@@ -1,0 +1,34 @@
+{
+  "link": {
+    "entityType": "BTN",
+    "linkId": "aab1uw",
+    "phoneNumber": "82121218493",
+    "prefilledMsg": "Halo admin, saya mau bertanya...",
+    "clientId": "",
+    "assistantId": "",
+    "whatsappBtnSettings": {
+      "variant": "WhatsAppBtnAndChatWidget",
+      "btnBackground": "#4dc247",
+      "btnCTA": "Chat Kami",
+      "mb": "30",
+      "ml": "30",
+      "mr": "30",
+      "borderRadius": "24",
+      "position": "Bottom-Right",
+      "brandName": "CS Jagoan Kode",
+      "brandSub": "online",
+      "brandColor": "#0A5F54",
+      "brandImgUrl": "https://i.imgur.com/i9kvpSn.jpeg",
+      "widgetBtnCTA": "Chat Sekarang",
+      "openWidgetByDefault": "true",
+      "openWidgetSessionWindow": "ALWAYS",
+      "onscreenMsg": "Halo,\nAda yang bisa kami bantu ?",
+      "widgetOnMobile": "true",
+      "urlPersonalization": false,
+      "personalizedUrls": []
+    },
+    "createdAt": "2026-05-14T02:54:46.627Z",
+    "updatedAt": "2026-05-14T02:54:46.627Z",
+    "__v": 0
+  }
+}
