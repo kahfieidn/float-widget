@@ -1,4 +1,5 @@
 /*!
+ * Purge Apabila ada perubahan https://purge.jsdelivr.net/gh/kahfieidn/float-widget@main/wa-widget-new.js
  * WA Floating Widget (standalone, no dependency)
  * Cara pakai: taruh <script src="wa-widget.js"></script> sebelum </body>
  * Bisa dipakai di web manapun (HTML statis, WordPress, Laravel, CI4, dll)
