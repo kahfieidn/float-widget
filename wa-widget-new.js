@@ -8,7 +8,7 @@
   var CONTACTS = [
     {
       name: "Administrasi",
-      desc: "Pendaftaran & pertanyaan umum",
+      desc: "Pertanyaan umum",
       number: "6282121218493",
       displayNumber: "+62 821-2121-8493"
     },
