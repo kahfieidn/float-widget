@@ -7,7 +7,7 @@
   // ---------- KONFIGURASI (ubah sesuai kebutuhan) ----------
   var CONTACTS = [
     {
-      name: "Administrasi",
+      name: "Admin",
       desc: "Pendaftaran & pertanyaan umum",
       number: "6282121218493",
       displayNumber: "+62 821-2121-8493"
