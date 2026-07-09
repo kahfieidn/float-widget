@@ -43,7 +43,7 @@
     "#wa-fab:hover { background:" + GREEN_DARK + "; transform: scale(1.05); }" +
     "#wa-fab svg { width: 28px; height: 28px; color: #fff; flex-shrink: 0; }" +
     "#wa-fab span { color: #fff; font-weight: 600; font-size: 15px; white-space: nowrap; }" +
-    "#wa-panel { position: fixed; bottom: 92px; right: 24px; width: 380px; max-width: calc(100vw - 32px); background: #fff; border-radius: 22px; box-shadow: 0 20px 50px rgba(0,0,0,0.25); z-index: 999999; overflow: hidden; display: none; border: 1px solid #eee; }" +
+    "#wa-panel { position: fixed; bottom: 92px; right: 24px; width: 340px; max-width: calc(100vw - 32px); background: #fff; border-radius: 22px; box-shadow: 0 20px 50px rgba(0,0,0,0.25); z-index: 999999; overflow: hidden; display: none; border: 1px solid #eee; }" +
     "#wa-panel.open { display: block; }" +
     "#wa-panel-header { background:" + GREEN + "; padding: 16px 20px; display: flex; align-items: center; justify-content: space-between; }" +
     "#wa-panel-header .left { display: flex; align-items: center; gap: 12px; }" +
@@ -55,12 +55,12 @@
     "#wa-panel-header .close-btn { background: none; border: none; color: rgba(255,255,255,0.85); cursor: pointer; padding: 4px; }" +
     "#wa-panel-header .close-btn:hover { color: #fff; }" +
     "#wa-list { padding: 12px; display: flex; flex-direction: column; gap: 8px; }" +
-    ".wa-item { display: flex; align-items: center; gap: 10px; padding: 12px 14px; border-radius: 16px; border: 1px solid #f0f0f0; }" +
-    ".wa-item .icon { width: 42px; height: 42px; background: rgba(37,211,102,0.1); border-radius: 14px; display: flex; align-items: center; justify-content: center; color:" + GREEN + "; flex-shrink: 0; }" +
-    ".wa-item .info { flex: 1; min-width: 0; }" +
-    ".wa-item .name { font-weight: 600; color: #1f2937; font-size: 14px; white-space: nowrap; }" +
-    ".wa-item .desc { font-size: 12px; color: #6b7280; margin-top: 2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }" +
-    ".wa-item .number { display: flex; align-items: center; gap: 5px; margin-top: 6px; color:" + GREEN + "; font-size: 12px; font-weight: 600; white-space: nowrap; }" +
+    ".wa-item { padding: 14px; border-radius: 16px; border: 1px solid #f0f0f0; }" +
+    ".wa-item .top-row { display: flex; align-items: center; gap: 12px; }" +
+    ".wa-item .icon { width: 40px; height: 40px; background: rgba(37,211,102,0.1); border-radius: 12px; display: flex; align-items: center; justify-content: center; color:" + GREEN + "; flex-shrink: 0; }" +
+    ".wa-item .name { font-weight: 600; color: #1f2937; font-size: 14px; flex: 1; min-width: 0; }" +
+    ".wa-item .desc { font-size: 12px; color: #6b7280; margin-top: 8px; }" +
+    ".wa-item .number { display: flex; align-items: center; gap: 5px; margin-top: 6px; color:" + GREEN + "; font-size: 12px; font-weight: 600; }" +
     ".wa-item .number svg { width: 13px; height: 13px; flex-shrink: 0; }" +
     ".wa-chat-btn { display: flex; align-items: center; gap: 5px; background:" + GREEN + "; color: #fff; border: none; border-radius: 999px; padding: 8px 14px; font-size: 12px; font-weight: 600; cursor: pointer; flex-shrink: 0; white-space: nowrap; transition: background .15s ease; }" +
     ".wa-chat-btn:hover { background:" + GREEN_DARK + "; }" +
@@ -79,14 +79,14 @@
   var itemsHtml = CONTACTS.map(function (c) {
     return (
       '<div class="wa-item">' +
+      '<div class="top-row">' +
       '<div class="icon">' + waIconSvg + "</div>" +
-      '<div class="info">' +
       '<div class="name">' + c.name + "</div>" +
-      '<div class="desc">' + c.desc + "</div>" +
-      '<div class="number">' + waIconSvg.replace('width="22" height="22"', 'width="13" height="13"') + "<span>" + c.displayNumber + "</span></div>" +
-      "</div>" +
       '<button class="wa-chat-btn" data-number="' + c.number + '" data-name="' + c.name + '">' +
       waIconSvg.replace('width="22" height="22"', 'width="15" height="15"') + "<span>Chat</span></button>" +
+      "</div>" +
+      '<div class="desc">' + c.desc + "</div>" +
+      '<div class="number">' + waIconSvg.replace('width="22" height="22"', 'width="13" height="13"') + "<span>" + c.displayNumber + "</span></div>" +
       "</div>"
     );
   }).join("");
