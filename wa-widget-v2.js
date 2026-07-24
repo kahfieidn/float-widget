@@ -7,16 +7,16 @@
   // ---------- KONFIGURASI (ubah sesuai kebutuhan) ----------
   var CONTACTS = [
     {
-      name: "Admin",
+      name: "Admin 1",
+      desc: "Informasi umum & administrasi",
+      number: "6285111318493",
+      displayNumber: "+62 851-1131-8493"
+    },
+    {
+      name: "Admin 2",
       desc: "Pendaftaran & pertanyaan umum",
       number: "6282121218493",
       displayNumber: "+62 821-2121-8493"
-    },
-    {
-      name: "Billing / Finance",
-      desc: "Pembayaran & invoice layanan",
-      number: "6285111318493",
-      displayNumber: "+62 851-1131-8493"
     },
   ];
   var GREEN = "#25D366";
