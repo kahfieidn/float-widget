@@ -130,7 +130,7 @@
       e.stopPropagation();
       var number = btn.getAttribute("data-number");
       var name = btn.getAttribute("data-name");
-      var message = encodeURIComponent("Halo " + name + ",\n\nSaya ingin bertanya...");
+      var message = encodeURIComponent("" + name + "");
       window.open("https://wa.me/" + number + "?text=" + message, "_blank");
       closePanel();
     });
